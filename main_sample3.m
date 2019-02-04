@@ -66,7 +66,7 @@ for i = 1:Nwords
     features(i+4,2) = mean(mm(:,col_ix(i)));
     features(i+4,3) = mean(mr(:,col_ix(i)));
 end
-
+%%
 labels= cell(Nwords+4,1);
 labels{1} = 'Score';
 labels{2} = 'Helpfulness';
@@ -74,7 +74,7 @@ labels{3} = 'Text length';
 labels{4} = '"!" frequncy';
 labels(5:end) = str_lCell;
 
-%%
+
 %category_name = categorical(labels);
 present_vec = 1:Nwords+4;
 close all
@@ -84,12 +84,13 @@ bar( features(present_vec,:) )
 %hAx.XTickLabel=string(labels(5:end)); % label the ticks
 xticks(present_vec)
 xticklabels(labels(present_vec))
-
+xtickangle(45)
 %xtextS = [0.07 0.14];
 %ytextS = [0.8 0.6];
 %annotation('line',xtextS,ytextS,'String','Score average lower in sticky reviews')
-legend('Blue: high impact reveiws','red: average window score is moderate',...
-    'yello: average windwo score is high')
+legend('Blue: sticky reviews','red: average window score is moderate',...
+    'yellow: average window score is high')
+
 
 
 
