@@ -76,21 +76,22 @@ labels(5:end) = str_lCell;
 
 
 %category_name = categorical(labels);
-present_vec = 1:Nwords+4;
+present_vec = 1:4;
 close all
 figure(1)
 bar( features(present_vec,:) )
-%hAx=gca;            
-%hAx.XTickLabel=string(labels(5:end)); % label the ticks
+%labels1 = [{'Score'},{'Helpfulness'},{'Text Length';'(normalized)'},...
+%    {'"!" frequency'}]
+%xticklabels(labels1)
+
 xticks(present_vec)
 xticklabels(labels(present_vec))
-xtickangle(45)
+%xtickangle(45)
 legend('Reviews with low window-score ("sticky")','Reviews with moderate windwo-score',...
     'Reviews with high window-score')
 set(gca,'FontSize',12)
 
-
-
+%{'hello';'there'}
 
 
 
