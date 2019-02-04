@@ -93,7 +93,7 @@ set(gca,'FontSize',12)
 
 %{'hello';'there'}
 
-
+xlabel('*text length is normalized','FontSize',12)
 
 
 
